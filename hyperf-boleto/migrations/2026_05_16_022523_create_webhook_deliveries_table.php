@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('webhook_deliveries', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->string("payment_id");
+            $table->string("outcome");
+            $table->string("payload_hash");
+            $table->dateTime("received_at");
+            $table->dateTime("processes_at")->nullable();
             $table->datetimes();
+            $table->unique(["payment_id", "payload_hash"]);
         });
     }
 
