@@ -2,7 +2,7 @@
 
 namespace App\Domain\Payment;
 
-class Money
+readonly final class Money
 {
     public function __construct(
         private(set) int $cents,
