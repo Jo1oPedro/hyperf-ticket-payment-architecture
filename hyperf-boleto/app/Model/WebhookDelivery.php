@@ -31,7 +31,7 @@ class WebhookDelivery extends Model
         "outcome",
         "payload_hash",
         "received_at",
-        "processes_at",
+        "processed_at",
     ];
 
     /**

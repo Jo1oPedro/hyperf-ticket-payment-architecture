@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('webhook_deliveries', function (Blueprint $table) {
+        Schema::create('outbox_events', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string("payment_id");
-            $table->string("outcome");
-            $table->string("payload_hash");
-            $table->timestamp("received_at");
-            $table->timestamp("processed_at")->nullable();
+            $table->string('event_name');
+            $table->json("payload");
+            $table->timestamp("published_at")->nullable();
             $table->datetimes();
-            $table->unique(["payment_id", "payload_hash"]);
+            $table->index("published_at", "created_at");
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('webhook_deliveries');
+        Schema::dropIfExists('outbox_events');
     }
 };

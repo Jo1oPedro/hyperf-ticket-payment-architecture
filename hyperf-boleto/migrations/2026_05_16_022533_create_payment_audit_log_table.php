@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("payment_id");
             $table->string("event");
             $table->string("before_status")->nullable();
-            $table->string("after_status");
+            $table->string("after_status")->nullable();
             $table->string("actor");
             $table->datetimes();
             $table->index(["payment_id", "created_at"]);
