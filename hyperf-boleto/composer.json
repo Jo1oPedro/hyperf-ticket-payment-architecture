@@ -13,6 +13,7 @@
     "license": "Apache-2.0",
     "require": {
         "php": ">=8.4",
+        "ext-bcmath": "*",
         "hyperf/amqp": "~3.1.0",
         "hyperf/async-queue": "~3.1.0",
         "hyperf/cache": "~3.1.0",
@@ -29,6 +30,7 @@
         "hyperf/memory": "~3.1.0",
         "hyperf/process": "~3.1.0",
         "hyperf/redis": "~3.1.0",
+        "nikic/php-parser": "^4.19 || ^5.0",
         "ramsey/uuid": "^4.9"
     },
     "require-dev": {
