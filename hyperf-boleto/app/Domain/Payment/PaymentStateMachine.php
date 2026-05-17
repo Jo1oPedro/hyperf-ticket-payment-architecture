@@ -31,6 +31,10 @@ final class PaymentStateMachine
         return false;
     }
 
+    /**
+     * @param PaymentStatus $status
+     * @return PaymentStatus[]
+     */
     public static function allowedTransitions(PaymentStatus $status): array
     {
         return array_map(
