@@ -3,7 +3,7 @@
 namespace HyperfTest\Unit\Domain\Payments;
 
 use App\Domain\Payment\Barcode;
-use App\Exception\InvalidBarcodeException;
+use App\Domain\Payment\Exception\InvalidBarcodeException;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

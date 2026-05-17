@@ -2,7 +2,7 @@
 
 namespace App\Domain\Payment;
 
-use App\Exception\InvalidBarcodeException;
+use App\Domain\Payment\Exception\InvalidBarcodeException;
 
 readonly final class Barcode
 {
